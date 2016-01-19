@@ -2,5 +2,6 @@
 angular.module('delta',[
     'ngMessages',
     'toastr',
-    'ui.grid'
+    'ui.grid',
+    'ngMaterial'
 ]);

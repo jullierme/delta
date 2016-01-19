@@ -14,8 +14,15 @@
     <link rel="stylesheet" href="bower_components/angular-ui-grid/ui-grid.css"/>
     <link rel="stylesheet" href="app/css/media-queries.css"/>
 
+    <link rel="stylesheet" href="bower_components/angular-material/angular-material.css">
+
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-messages/angular-messages.js"></script>
+
+    <script src="bower_components/angular-material/angular-material.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <script src="bower_components/angular-aria/angular-aria.js"></script>
+
     <script src="bower_components/angular-toastr/dist/angular-toastr.tpls.js"></script>
     <script src="bower_components/angular-ui-grid/ui-grid.js"></script>
 
@@ -36,64 +43,49 @@
                   novalidate>
                 <div class="row">
                     <div class="col-sm-3">
-                        <div class="form-group"
-                             ng-class="{'has-error':formPessoa.nome.$invalid && formPessoa.nome.$touched}">
-                            <label class="control-label">Nome</label>
-                            <input type="text"
-                                   class="form-control"
-                                   ng-model="entidade.nome"
-                                   name="nome"
+                        <md-input-container>
+                            <label>Nome</label>
+                            <input name="nome" ng-model="entidade.nome"
                                    required
                                    ng-minlength="3"
                                    ng-maxlength="20">
-
-                            <div class="help-block" ng-messages="formPessoa.nome.$error"
+                            <div ng-messages="formPessoa.nome.$error"
                                  ng-if="formPessoa.nome.$invalid && formPessoa.nome.$touched">
                                 <div ng-messages-include="app/template/messages.html"></div>
                             </div>
-                        </div>
+                        </md-input-container>
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group"
-                             ng-class="{'has-error':formPessoa.sobrenome.$invalid && formPessoa.sobrenome.$touched}">
-                            <label class="control-label">Sobrenome</label>
-                            <input type="text"
-                                   class="form-control"
-                                   ng-model="entidade.sobrenome"
-                                   name="sobrenome"
+                        <md-input-container>
+                            <label>Sobrenome</label>
+                            <input name="sobrenome" ng-model="entidade.sobrenome"
                                    required
                                    ng-minlength="3"
                                    ng-maxlength="20">
-
-                            <div class="help-block" ng-messages="formPessoa.sobrenome.$error"
+                            <div ng-messages="formPessoa.sobrenome.$error"
                                  ng-if="formPessoa.sobrenome.$invalid && formPessoa.sobrenome.$touched">
                                 <div ng-messages-include="app/template/messages.html"></div>
                             </div>
-                        </div>
+                        </md-input-container>
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group"
-                             ng-class="{'has-error':formPessoa.nascimento.$invalid && formPessoa.nascimento.$touched}">
-                            <label class="control-label">Nascimento</label>
-                            <input type="date"
-                                   class="form-control"
-                                   ng-model="entidade.nascimento"
-                                   name="nascimento"
-                                   required>
-
-                            <div class="help-block" ng-messages="formPessoa.nascimento.$error"
+                        <md-datepicker ng-model="entidade.nascimento"
+                                       md-placeholder="Informe a data">
+                            <div ng-messages="formPessoa.nascimento.$error"
                                  ng-if="formPessoa.nascimento.$invalid && formPessoa.nascimento.$touched">
                                 <div ng-messages-include="app/template/messages.html"></div>
                             </div>
-                        </div>
+                        </md-datepicker>
                     </div>
                     <div class="col-sm-3">
-                        <div class="form-group">
-                            <label class="control-label">Cor</label>
-                            <input type="text"
-                                   class="form-control"
-                                   ng-model="entidade.cor">
-                        </div>
+                        <md-input-container>
+                            <label>Cor</label>
+                            <input ng-model="entidade.cor" name="cor">
+                            <div ng-messages="formPessoa.cor.$error"
+                                 ng-if="formPessoa.cor.$invalid && formPessoa.cor.$touched">
+                                <div ng-messages-include="app/template/messages.html"></div>
+                            </div>
+                        </md-input-container>
                     </div>
                 </div>
 
