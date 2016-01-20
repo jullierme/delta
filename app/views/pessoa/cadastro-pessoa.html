@@ -1,7 +1,18 @@
 <div style="width: 200px; height: 200px; background-color: #7a43b6"
-    ng-controller="CadastroPessoaController">
+    ng-controller="CadastroPessoaController as vm">
 
     Cadastro de pessoa
 
-    {{nome}}
+    {{vm.nome}}
+
+    {{vmIndex.info}}
+
+    <div ng-controller="MeuController as ctrPrincipal">
+
+
+        <div ng-controller="OutroController as outroController">
+            {{ctrPrincipal.nome}}
+        </div>
+    </div>
 </div>
+

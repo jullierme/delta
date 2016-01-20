@@ -1,11 +1,18 @@
 //declaração do module principal
+angular.module('delta.controller',[]);
+angular.module('delta.service',[]);
+angular.module('delta.directive',[]);
+
 angular.module('delta',[
     'ngMessages',
     'toastr',
     'ui.grid',
     'ngMaterial',
     'ui.router',
-    'oc.lazyLoad'
+    'oc.lazyLoad',
+    'delta.controller',
+    'delta.service',
+    'delta.directive'
 ]).config(config);
 
 config.$inject = ['$stateProvider','$urlRouterProvider'];
@@ -24,7 +31,7 @@ function config($stateProvider, $urlRouterProvider){
     };
 
     var cadastroPessoa = {
-        url: "/cadastro-pessoa",
+        url: "/cadastro-pessoa/:id",
         templateUrl: "app/views/pessoa/cadastro-pessoa.html",
         resolve: {
             deps: function ($ocLazyLoad) {

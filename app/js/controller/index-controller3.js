@@ -1,9 +1,8 @@
 angular.module('delta')
     .controller('IndexController3', IndexController3);
 
-IndexController3.$inject = ['$scope', '$timeout', 'AlertService', '$filter'];
-
-function IndexController3($scope, $timeout, AlertService, $filter){
+function IndexController3($scope, $timeout, AlertService,
+                          $filter, $rootScope, $state){
     $scope.listaDePessoas = [];
     $scope.entidade = {};
     $scope.salvar = salvar;
@@ -90,5 +89,33 @@ function IndexController3($scope, $timeout, AlertService, $filter){
         style.backgroundColor = linhaSelecionada.cor;
         style.color = 'white';
         return style;
+    }
+
+    $scope.dispararEvento = function(){
+        $rootScope.$broadcast('testeBroadcastEvent',{nome:'Jullierme'})
+        $state.go('stateQueNaoExiste');
+    };
+
+    $rootScope.$on('$stateChangeStart',stateChangeStart);
+    $rootScope.$on('$stateChangeSuccess',stateChangeSuccess);
+    $rootScope.$on('$stateNotFound',stateNotFound);
+
+    function stateChangeStart(event, toState, toParams, fromState, fromParams){
+         if(toState.name === 'cadastroPessoa'){
+             AlertService.showError('Você não possúi permissão para acessar' +
+                 'esta tela');
+
+             event.preventDefault();
+         }
+    }
+
+    function stateChangeSuccess(event, toState, toParams, fromState, fromParams){
+        AlertService.showSuccess('Carregou estado ' + toState.name + ' com sucesso.');
+    }
+
+    function stateNotFound(event, unfoundState, fromState, fromParams){
+        AlertService.showError('Essa página não existe.');
+
+        $state.go('home');
     }
 }
