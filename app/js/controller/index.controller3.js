@@ -4,8 +4,10 @@
     angular.module('delta')
         .controller('IndexController3', IndexController3);
 
+    /* @ngInject */
     function IndexController3(AlertService,
-                              $filter, $rootScope, $state){
+                              $filter, $rootScope,
+                              $state, $timeout){
         var vm = this;
         vm.listaDePessoas = [];
         vm.entidade = {};

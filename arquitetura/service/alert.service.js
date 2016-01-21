@@ -4,8 +4,7 @@
     angular.module('delta.service')
         .service('AlertService', AlertService);
 
-    AlertService.$inject = ['toastr'];
-
+    /* @ngInject */
     function AlertService(toastr){
         this.nomeDoUsuario = '';
         this.showSuccess = showSuccess;

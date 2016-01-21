@@ -4,8 +4,7 @@
     angular.module('delta')
         .controller('IndexController2', IndexController2);
 
-    IndexController2.$inject = ['$scope'];
-
+    /* @ngInject */
     function IndexController2($scope){
         var vm = this;
         vm.nome = 'Delta';

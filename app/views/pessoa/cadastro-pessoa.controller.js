@@ -4,6 +4,7 @@
     angular.module('delta.controller')
         .controller('CadastroPessoaController',CadastroPessoaController);
 
+    /* @ngInject */
     function CadastroPessoaController($scope, $stateParams){
         var vm = this;
         vm.nome = 'Valor informado no controller';
@@ -19,7 +20,7 @@
         }
 
         function adicionarEscutaNoNome(){
-            $scope.$watch('vm.nome')
+            $scope.$watch('vm.nome');
         }
 
         function adicionarEventos(){

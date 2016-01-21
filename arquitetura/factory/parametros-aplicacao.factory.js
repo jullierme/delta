@@ -4,6 +4,7 @@
     angular.module('delta.factory')
         .factory('ParametrosAplicacao', ParametrosAplicacao);
 
+    /* @ngInject */
     function ParametrosAplicacao(){
         return {
             nomeDoUsuario: '',

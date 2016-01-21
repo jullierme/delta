@@ -4,8 +4,7 @@
     angular.module('delta')
         .controller('PesquisaPessoaController',PesquisaPessoaController);
 
-    PesquisaPessoaController.$inject = ['$state'];
-
+    /* @ngInject */
     function PesquisaPessoaController($state){
         var vm = this;
         vm.nome = 'Controller da pesquisa carregado';
