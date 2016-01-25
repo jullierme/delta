@@ -88,6 +88,20 @@
                     expand: true,
                     src: 'build/source.css'
                 }
+            },
+            ngdocs: {
+                options: {
+                    dest: 'docs',
+                    title: 'Docs',
+                    html5Mode: false
+                },
+                delta: {
+                    title: 'Docs',
+                    src: [
+                        'app/**/*.js',
+                        'arquitetura/**/*.js'
+                    ]
+                }
             }
         });
 
