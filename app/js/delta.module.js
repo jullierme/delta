@@ -19,6 +19,7 @@
         'delta.service',
         'delta.directive',
         'delta.factory',
-        'delta.filter'
+        'delta.filter',
+        'angular-keycode'
     ]);
 })();

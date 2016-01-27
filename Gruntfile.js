@@ -102,7 +102,15 @@
                         'arquitetura/**/*.js'
                     ]
                 }
+            },
+            less: {
+                app: {
+                    files: {
+                        'arquitetura/style/ca-style.css': 'arquitetura/style/ca-style.less'
+                    }
+                }
             }
+
         });
 
         grunt.registerTask('build', [
@@ -110,6 +118,7 @@
             'copy',
             'ngAnnotate',
             'concat',
+            'less',
             'autoprefixer',
             'uglify',
             'cssmin',

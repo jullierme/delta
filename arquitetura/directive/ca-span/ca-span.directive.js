@@ -4,6 +4,7 @@
     angular.module('delta.directive')
         .directive('caSpan', caSpan);
 
+    /* @ngInject */
     function caSpan(){
         return {
             restrict: 'AE',

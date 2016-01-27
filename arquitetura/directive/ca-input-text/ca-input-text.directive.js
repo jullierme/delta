@@ -20,6 +20,7 @@
     angular.module('delta.directive')
         .directive('caInputText', caInputText);
 
+    /* @ngInject */
     function caInputText(){
         return {
             link: link,
