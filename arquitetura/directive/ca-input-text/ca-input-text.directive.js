@@ -23,6 +23,7 @@
     /* @ngInject */
     function caInputText(){
         return {
+            require:'^form',
             link: link,
             restrict: 'E',
             templateUrl: 'arquitetura/directive/ca-input-text/ca-input-text.directive.html',
@@ -30,10 +31,15 @@
                 label: '@',
                 colspan: '@',
                 ngModel:'=',
-                ngRequired:'='
+                ngRequired:'=',
+                ngMaxlength:'@',
+                ngMinlength:'@'
             }
         };
-        function link(scope, element, attrs){
+        function link(scope, element, attrs, formControl){
+            scope.formControl = formControl;
+            scope.inputName = 'inputText'+scope.$id;
+
             if(!attrs.colspan){
                 attrs.colspan = 3;
             }

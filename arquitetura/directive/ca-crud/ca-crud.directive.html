@@ -4,7 +4,7 @@
     </div>
     <div class="panel-body">
         <form name="caFormCrud"
-              ng-submit="salvar()"
+              ng-submit="onSalvar()"
               novalidate>
 
             <div ng-transclude></div>
@@ -17,7 +17,7 @@
                         Salvar
                     </button>
                     <button class="btn btn-default"
-                            ng-click="limpar()"
+                            ng-click="onLimpar()"
                             type="button">
                         <i class="fa fa-eraser"></i>
                         Limpar
