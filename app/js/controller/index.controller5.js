@@ -16,7 +16,7 @@
         };
 
         function carrgarListaDeDados(){
-            var promisse = $http.post('http://jsonplaceholder.typicode.com/posts/');
+            var promisse = $http.get('http://jsonplaceholder.typicode.com/posts/');
 
             promisse.then(
                 carregarResult, carregarFault
